@@ -1,5 +1,7 @@
 package models
 
+import "time"
+
 type ResponseErrorCustom struct {
 	ResponseCode    string      `json:"responseCode"`
 	ResponseMessage interface{} `json:"responseMessage"`
@@ -32,7 +34,6 @@ type JwtModel struct {
 type ResponseCustom struct {
 	ResponseCode    string      `json:"responseCode"`
 	ResponseMessage string      `json:"responseMessage"`
-	Omzet           int         `json:"omzet,omitempty"`
 	Data            interface{} `json:"data"`
 }
 
@@ -55,4 +56,11 @@ type ResponseCustomErr struct {
 
 type ErrMeta struct {
 	FieldErr string
+}
+
+type Meta struct {
+	ID        uint       `gorm:"primary_key" json:"-"`
+	CreatedAt time.Time  `json:"-"`
+	UpdatedAt time.Time  `json:"-"`
+	DeletedAt *time.Time `json:"-"`
 }

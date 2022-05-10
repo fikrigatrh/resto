@@ -1,11 +1,11 @@
-package config
+package env
 
 import (
 	"github.com/caarlos0/env"
 	"github.com/joho/godotenv"
 	"github.com/sirupsen/logrus"
 	"log"
-	"task-be/models"
+	"resto/models"
 )
 
 var Config models.ServerConfig
